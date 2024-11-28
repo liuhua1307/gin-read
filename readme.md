@@ -10,8 +10,6 @@ this is a sample that combine go-clean-arch &amp; go-standard-layout
 ### `/pkg`
 同样的也是根据 [go-standard-layout](https://githu.com/golang-standards/project-layoufat/blob/master/cmd/README.md) 放入外部程序可以用的代码。
 
-例如 `/pkg/logs` 封装一些通用 `logs` 的代码 `/pkg/push` 封装一些通用的极光推送代码之类的。可以让外部程序调用的代码。
-但是如果日志和极光推送代码和项目强绑定的话，请放到 `/internal` 下。 
 
 ### `/internal`
 也是根据 [go-standard-layout](https://githu.com/golang-standards/project-layoufat/blob/master/cmd/README.md) 私有的应用程序代码库。这些是不希望被其他人导入的代码。在该目录下进行实际项目代码的开发。
@@ -26,10 +24,6 @@ this is a sample that combine go-clean-arch &amp; go-standard-layout
 
 例如 `/internal/domain/user.go` 里面存放着 `user` 的 `model` 定义，以及 `user_respository` `user_usecase` `user_delivery` 层对应的接口定义。
 
-##### `/internal/domain/mocks`
-根据 [go-clean-arch](https://github.com/bxcodec/go-clean-arch) 这里存放对应 `usecase` `repository` 层相关代码的 `mocks` 和 `stub`。
-
-例如 `/internal/domain/mocks/user_repository.go` 存放对应 `user_repository` `mock` 的代码。
 
 #### `/internal/pkg`
 
